@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">activityapp</string>
+
+    <string name="btn_one_message">BUTTON_ON</string>
+    <string name="btn_two_message">BUTTON_TWO</string>
+    <string name="btn_three_message">BUTTON_THREE</string>
+
+    <string name="btn_second_one_message">BUTTON_SECOND_ONE_MESSAGE</string>
+    <string name="menu_add_title">Add</string>
+    <string name="menu_remove_title">Remove</string>
+</resources>
