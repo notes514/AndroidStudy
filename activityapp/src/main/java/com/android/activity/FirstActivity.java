@@ -2,7 +2,6 @@ package com.android.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     private static final String TAG = "FirstActivity";
     public static final String EXTRA_BTN_TWO = "btn_two_message";
@@ -23,6 +22,8 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 打印当前返回栈的ID
+        Log.d(TAG, "task id is taskId：" + getTaskId());
         // 给当前Activity加载一个布局，注意：在项目中添加的任何资源都会在 R 文件中添加生成相对的资源id
         setContentView(R.layout.first_layout);
 
@@ -41,7 +42,7 @@ public class FirstActivity extends AppCompatActivity {
      */
     public void sendBtnOne(View view) {
         view.setOnClickListener(v -> {
-            // 显示 Intent，意图非常明显， 直接跳转到目标SecondActivity上
+            // 显示 Intent，意图非常明显，直接跳转到目标SecondActivity上
 //            Intent intent = new Intent(this, SecondActivity.class);
 
             // 隐式 Intent，意图不明显
@@ -78,15 +79,13 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch(requestCode) {
-            case 1:
-                if (resultCode == RESULT_OK) {
-                    if (data != null) {
-                        String resultDate = data.getStringExtra("result_data");
-                        Log.d(TAG,"result data is " + resultDate);
-                    }
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    String resultDate = data.getStringExtra("result_data");
+                    Log.d(TAG, "result data is " + resultDate);
                 }
-                break;
+            }
         }
     }
 

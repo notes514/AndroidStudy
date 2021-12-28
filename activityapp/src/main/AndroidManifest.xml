@@ -13,6 +13,7 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".ThirdActivity"
+            android:launchMode="singleTask"
             android:exported="true" >
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW"/>
@@ -23,6 +24,7 @@
         </activity>
         <activity
             android:name=".SecondActivity"
+            android:launchMode="singleInstance"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.android.activity.ACTION_START" />

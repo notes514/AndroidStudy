@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidStudy"
 include ':app'
 include ':activityapp'
+include ':activity_life_cyele_test'
