@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UIWidgetTest</string>
+    <string name="btn_send_message">SEND</string>
+    <string name="et_message">Please enter content</string>
+</resources>

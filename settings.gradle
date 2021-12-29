@@ -9,3 +9,6 @@ rootProject.name = "AndroidStudy"
 include ':app'
 include ':activityapp'
 include ':activity_life_cyele_test'
+include ':ui_widget_test'
+include ':ui_layout_test'
+include ':ui_custom_views'
